@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANKA RED TEAM gururla sunar!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Hacker&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: 'Hacker', sans-serif;
+            color: white;
+            background: url('https://i.hizliresim.com/f2celh8.png') no-repeat center center fixed;
+            background-size: cover;
+            transition: background 1s ease-in-out;
+        }
+
+        .main-text {
+            font-size: 40px;
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            text-align: center;
+            animation: fadeInUp 2s forwards;
+            text-shadow: 2px 2px 5px red;
+            cursor: pointer; /* Tıklanabilir olduğunu belirtir */
+        }
+
+        @keyframes fadeInUp {
+            0% { transform: translateY(100%); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes bounce {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0); }
+        }
+
+        .alert {
+            position: absolute;
+            bottom: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 32px;
+            color: red;
+            font-weight: bold;
+            animation: fadeIn 3s forwards, bounce 1s infinite alternate;
+            animation-delay: 2s;
+            text-shadow: 2px 2px 5px black;
+        }
+
+        audio {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main-text" onclick="window.open('https://tr.wikipedia.org/wiki/T%C3%BCrk_bayra%C4%9F%C4%B1', '_blank')">
+        Anka Red Team gururla sunar
+    </div>
+
+    <audio controls autoplay loop>
+        <source src="mp3semti.com/CVRTOON-Er-Turan.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        const backgrounds = [
+            'https://i.hizliresim.com/me0baki.jpg',
+            'https://i.hizliresim.com/cyr5lj4.png'
+        ];
+        let currentIndex = 0;
+
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % backgrounds.length;
+            document.body.style.backgroundImage = `url('${backgrounds[currentIndex]}')`;
+        }, 2000);
+    </script>
+
+</body>
+</html>
